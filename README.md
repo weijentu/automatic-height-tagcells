@@ -1,5 +1,5 @@
 # automatic-height-tagcells
-> A practice project to meet some criteria:
+### A practice project to meet some criteria:
 - Dynamic height of ``UITableViewCell`` based on **autolayout**
 - Tags have to be aligned automatically
 - Tags have to be clickalbe
