@@ -64,11 +64,8 @@
     NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:label.attributedText];
     [storage addLayoutManager:manager];
     
-    CGRect rect = [manager usedRectForTextContainer:container];
-    CGPoint offset = CGPointMake((labelSize.width - rect.size.width)/2 - rect.origin.x,
-                                 (labelSize.height - rect.size.height)/2 - rect.origin.y);
     CGPoint touchPoint = [recognizer locationInView:label];
-    CGPoint point = CGPointMake(touchPoint.x - offset.x, touchPoint.y - offset.y);
+    CGPoint point = CGPointMake(touchPoint.x, touchPoint.y);
     NSInteger indexOfCharacter = [manager characterIndexForPoint:point
                                                  inTextContainer:container
                         fractionOfDistanceBetweenInsertionPoints:nil];
