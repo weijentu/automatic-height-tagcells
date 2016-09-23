@@ -60,7 +60,7 @@
     return tag;
 }
 
-#pragma mark - Genere
+#pragma mark - Genre
 
 + (AHTag *)genre1 {
     AHTag *tag = [AHTag new];
@@ -254,7 +254,7 @@
     return tag;
 }
 
-#pragma mark - App store
+#pragma mark - App Store
 
 + (AHTag *)app1 {
     AHTag *tag = [AHTag new];

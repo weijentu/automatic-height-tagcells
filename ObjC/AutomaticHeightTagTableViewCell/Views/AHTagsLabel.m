@@ -65,8 +65,7 @@
     [storage addLayoutManager:manager];
     
     CGPoint touchPoint = [recognizer locationInView:label];
-    CGPoint point = CGPointMake(touchPoint.x, touchPoint.y);
-    NSInteger indexOfCharacter = [manager characterIndexForPoint:point
+    NSInteger indexOfCharacter = [manager characterIndexForPoint:touchPoint
                                                  inTextContainer:container
                         fractionOfDistanceBetweenInsertionPoints:nil];
 
@@ -82,7 +81,7 @@
     _tags = tags;
     
     UITableViewCell *cell = [UITableViewCell new];
-    NSMutableAttributedString *string = [NSMutableAttributedString new];
+    NSMutableAttributedString *mutableString = [NSMutableAttributedString new];
     for (NSInteger i = 0; i < tags.count; i++) {
         AHTag *tag = tags[i];
         NSString *title = tag.title;
@@ -105,26 +104,28 @@
         attachment.image = image;
         
         NSAttributedString *attrStr = [NSAttributedString attributedStringWithAttachment:attachment];
-        [string appendAttributedString:attrStr];
+        [mutableString beginEditing];
+        [mutableString appendAttributedString:attrStr];
+        [mutableString endEditing];
     }
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
     paragraphStyle.lineSpacing = 5.0;
-    [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, string.length)];
+    [mutableString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, mutableString.length)];
     
-    self.attributedText = string;
+    self.attributedText = mutableString;
 }
 
 #pragma mark - NSAttributedString
 
 + (NSAttributedString *)attributedString:(NSString *)string {
-    NSMutableParagraphStyle *style =  [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    style.alignment = NSTextAlignmentCenter;
-    style.firstLineHeadIndent = 10.0f;
-    style.headIndent = 10.0f;
-    style.tailIndent = 10.0f;
+    NSMutableParagraphStyle *paragraphStyle =  [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    paragraphStyle.firstLineHeadIndent = 10.0f;
+    paragraphStyle.headIndent = 10.0f;
+    paragraphStyle.tailIndent = 10.0f;
     NSDictionary *attributes = @{
-                                 NSParagraphStyleAttributeName  : style,
+                                 NSParagraphStyleAttributeName  : paragraphStyle,
                                  NSFontAttributeName            : [UIFont boldSystemFontOfSize:14.0]
                                  };
     NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:string
