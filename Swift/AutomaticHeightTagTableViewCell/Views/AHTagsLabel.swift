@@ -14,6 +14,20 @@ struct AHTag {
     var color: UIColor
     var URL: NSURL?
     var enabled: Bool
+
+    func attributedTitle() -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.firstLineHeadIndent = 10
+        paragraphStyle.headIndent = 10
+        paragraphStyle.tailIndent = 10
+        
+        let attributes = [
+            NSParagraphStyleAttributeName  : paragraphStyle,
+            NSFontAttributeName            : UIFont.boldSystemFont(ofSize: 14)
+        ]
+        return NSAttributedString(string: self.title, attributes: attributes)
+    }
 }
 
 class AHTagsLabel: UILabel {
@@ -97,7 +111,7 @@ class AHTagsLabel: UILabel {
         let cell = UITableViewCell()
         for (_, tag) in tags.enumerated() {
             let view = AHTagView()
-            view.label.attributedText = tag.title.attributedString()
+            view.label.attributedText = tag.attributedTitle()
             view.label.backgroundColor = tag.enabled ? tag.color : UIColor.lightGray
             let size = view.systemLayoutSizeFitting(view.frame.size,
                                                     withHorizontalFittingPriority: UILayoutPriorityFittingSizeLevel,
@@ -123,20 +137,4 @@ class AHTagsLabel: UILabel {
         self.attributedText = mutableString
     }
     
-}
-
-extension String {
-    public func attributedString() -> NSAttributedString {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.firstLineHeadIndent = 10
-        paragraphStyle.headIndent = 10
-        paragraphStyle.tailIndent = 10
-       
-        let attributes = [
-            NSParagraphStyleAttributeName  : paragraphStyle,
-            NSFontAttributeName            : UIFont.boldSystemFont(ofSize: 14)
-        ]
-        return NSAttributedString(string: self, attributes: attributes)
-    }
 }
