@@ -1,0 +1,288 @@
+[
+	[{
+		"URL": "http:\/\/pinterest.com",
+		"COLOR": "0xFF8F8F",
+		"ENABLED": true,
+		"CATEGORY": "Pinterest",
+		"TITLE": "All Pins"
+	}, {
+		"URL": "http:\/\/pinterest.com",
+		"COLOR": "0xFF8F8F",
+		"ENABLED": true,
+		"CATEGORY": "Pinterest",
+		"TITLE": "Your Pins"
+	}, {
+		"URL": "http:\/\/pinterest.com",
+		"COLOR": "0xFF8F8F",
+		"ENABLED": false,
+		"CATEGORY": "Pinterest",
+		"TITLE": "People"
+	}, {
+		"URL": "http:\/\/pinterest.com",
+		"COLOR": "0xFF8F8F",
+		"ENABLED": true,
+		"CATEGORY": "Pinterest",
+		"TITLE": "Boards"
+	}],
+	[{
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Classical"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Comedy"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Country"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": false,
+		"CATEGORY": "Genre",
+		"TITLE": "Dance"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Drama"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Early Listening"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Electronic"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": false,
+		"CATEGORY": "Genre",
+		"TITLE": "Folk"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Hip Hop\/Rap"
+	}, {
+		"URL": "http:\/\/itunes.com",
+		"COLOR": "0xA08FFF",
+		"ENABLED": true,
+		"CATEGORY": "Genre",
+		"TITLE": "Holiday"
+	}],
+	[{
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": true,
+		"CATEGORY": "Device",
+		"TITLE": "Mobile"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": true,
+		"CATEGORY": "Device",
+		"TITLE": "Computer"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": true,
+		"CATEGORY": "Device",
+		"TITLE": "Tablet"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": false,
+		"CATEGORY": "Device",
+		"TITLE": "Car"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": true,
+		"CATEGORY": "Device",
+		"TITLE": "Speaker"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": true,
+		"CATEGORY": "Device",
+		"TITLE": "Playstation"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": false,
+		"CATEGORY": "Device",
+		"TITLE": "TV"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": false,
+		"CATEGORY": "Device",
+		"TITLE": "Android Wear"
+	}, {
+		"URL": "http:\/\/www.spotify.com",
+		"COLOR": "0x8FB6FF",
+		"ENABLED": true,
+		"CATEGORY": "Device",
+		"TITLE": "Web Player"
+	}],
+	[{
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Books"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Business"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Catalogues"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Education"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Finance"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Food & Drink"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": false,
+		"CATEGORY": "App Store",
+		"TITLE": "Games"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Health & Fitness"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Kids"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Lifestyle"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Medical"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Music"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Navigation"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": false,
+		"CATEGORY": "App Store",
+		"TITLE": "News"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": false,
+		"CATEGORY": "App Store",
+		"TITLE": "Magazines & Newspapers"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Photo & Video"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": false,
+		"CATEGORY": "App Store",
+		"TITLE": "Productivity"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Reference"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Shopping"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Social Networking"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Travel"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Travel"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Utilities"
+	}, {
+		"URL": "http:\/\/appstore.com",
+		"COLOR": "0x65CDA3",
+		"ENABLED": true,
+		"CATEGORY": "App Store",
+		"TITLE": "Weather"
+	}]
+]

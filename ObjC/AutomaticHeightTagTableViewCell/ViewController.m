@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "AHTagTableViewCell.h"
-#import "TagGroups.h"
 
 @interface ViewController ()
 
@@ -23,7 +22,7 @@
     
     self.title = @"TAGS";
     
-    _dataSource = [TagGroups dataSource];
+    _dataSource = [self parseJSON];
     
     UINib *nib = [UINib nibWithNibName:@"AHTagTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell"];
@@ -32,6 +31,24 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSArray *)parseJSON {
+    NSError *error;
+    NSURL *URL= [[NSBundle mainBundle] URLForResource:@"TagGroups" withExtension:@"json"];
+    NSData *data = [NSData dataWithContentsOfURL:URL];
+    NSArray *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    
+    NSMutableArray *mArray = [NSMutableArray new];
+    for (NSArray *object in objects) {
+        NSMutableArray *nArray = [NSMutableArray new];
+        for (NSDictionary *dictionary in object) {
+            [nArray addObject:dictionary.tag];
+        }
+        [mArray addObject:nArray];
+    }
+    
+    return mArray;
 }
 
 #pragma mark - UITableViewDataSource

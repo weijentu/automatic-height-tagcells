@@ -18,8 +18,8 @@
 		9F673F011D3AD8A400959764 /* AHTagsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F673F001D3AD8A400959764 /* AHTagsLabel.m */; };
 		9F673F041D3AD8C600959764 /* AHTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F673F031D3AD8C600959764 /* AHTagView.m */; };
 		9F673F081D3AE77400959764 /* AHTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F673F071D3AE77400959764 /* AHTag.m */; };
-		9F673F0B1D3AEE2700959764 /* TagGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F673F0A1D3AEE2700959764 /* TagGroups.m */; };
 		9F673F101D3AFC7C00959764 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F673F0F1D3AFC7C00959764 /* InfoPlist.strings */; };
+		9FD943BA1DD7EDE70026F493 /* TagGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FD943B91DD7EDE70026F493 /* TagGroups.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +42,8 @@
 		9F673F031D3AD8C600959764 /* AHTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHTagView.m; sourceTree = "<group>"; };
 		9F673F061D3AE77400959764 /* AHTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHTag.h; sourceTree = "<group>"; };
 		9F673F071D3AE77400959764 /* AHTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHTag.m; sourceTree = "<group>"; };
-		9F673F091D3AEE2700959764 /* TagGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagGroups.h; sourceTree = "<group>"; };
-		9F673F0A1D3AEE2700959764 /* TagGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagGroups.m; sourceTree = "<group>"; };
 		9F673F0F1D3AFC7C00959764 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		9FD943B91DD7EDE70026F493 /* TagGroups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TagGroups.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +117,9 @@
 		9F673F051D3AE76500959764 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9FD943B91DD7EDE70026F493 /* TagGroups.json */,
 				9F673F061D3AE77400959764 /* AHTag.h */,
 				9F673F071D3AE77400959764 /* AHTag.m */,
-				9F673F091D3AEE2700959764 /* TagGroups.h */,
-				9F673F0A1D3AEE2700959764 /* TagGroups.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,7 +150,7 @@
 		9F673ED71D3AD82800959764 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Cold Yam";
 				TargetAttributes = {
 					9F673EDE1D3AD82800959764 = {
@@ -187,6 +185,7 @@
 				9F673EEF1D3AD82800959764 /* Assets.xcassets in Resources */,
 				9F673EED1D3AD82800959764 /* Main.storyboard in Resources */,
 				9F673EFE1D3AD87600959764 /* AHTagTableViewCell.xib in Resources */,
+				9FD943BA1DD7EDE70026F493 /* TagGroups.json in Resources */,
 				9F673F101D3AFC7C00959764 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +199,6 @@
 			files = (
 				9F673EEA1D3AD82800959764 /* ViewController.m in Sources */,
 				9F673EE71D3AD82800959764 /* AppDelegate.m in Sources */,
-				9F673F0B1D3AEE2700959764 /* TagGroups.m in Sources */,
 				9F673EE41D3AD82800959764 /* main.m in Sources */,
 				9F673F011D3AD8A400959764 /* AHTagsLabel.m in Sources */,
 				9F673F041D3AD8C600959764 /* AHTagView.m in Sources */,
@@ -245,8 +243,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -289,8 +289,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

@@ -11,11 +11,17 @@ import UIKit
 class ViewController: UITableViewController {
     
     private let dataSource = { () -> [Array<AHTag>] in
-        return [
-            pinterest,
-            genre,
-            device,
-            app]
+        let URL = Bundle.main.url(forResource: "TagGroups", withExtension: "json")!
+        do {
+            let data = try Data(contentsOf: URL)
+            let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            guard let groups = object as? [[[String : Any]]] else {
+                fatalError("Not in an expected form of [[[String : Any]]]")
+            }
+            return groups.map({ return $0.map({ AHTag(dictionary: $0) }) })
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
     }()
 
     override func viewDidLoad() {

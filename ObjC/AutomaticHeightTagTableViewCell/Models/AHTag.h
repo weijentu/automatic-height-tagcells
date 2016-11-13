@@ -17,3 +17,15 @@
 @property (nonatomic, strong) NSNumber *enabled;
 
 @end
+
+@interface NSDictionary (Extensions)
+
+- (AHTag *)tag;
+
+@end
+
+@interface NSString (Extensions)
+
+- (UIColor *)color;
+
+@end

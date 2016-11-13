@@ -16,7 +16,7 @@
 		9F6611641D935CCE005438A8 /* AHTagsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6611631D935CCE005438A8 /* AHTagsLabel.swift */; };
 		9F6611671D935FD2005438A8 /* AHTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6611651D935FD2005438A8 /* AHTagTableViewCell.swift */; };
 		9F6611681D935FD2005438A8 /* AHTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6611661D935FD2005438A8 /* AHTagTableViewCell.xib */; };
-		9F8EBE3B1D95EC50003BE8BC /* TagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EBE3A1D95EC50003BE8BC /* TagGroups.swift */; };
+		9FBFA4651DD7F25600429360 /* TagGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFA4641DD7F25600429360 /* TagGroups.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		9F6611631D935CCE005438A8 /* AHTagsLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTagsLabel.swift; sourceTree = "<group>"; };
 		9F6611651D935FD2005438A8 /* AHTagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTagTableViewCell.swift; sourceTree = "<group>"; };
 		9F6611661D935FD2005438A8 /* AHTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AHTagTableViewCell.xib; sourceTree = "<group>"; };
-		9F8EBE3A1D95EC50003BE8BC /* TagGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagGroups.swift; sourceTree = "<group>"; };
+		9FBFA4641DD7F25600429360 /* TagGroups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TagGroups.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		9F66115F1D9356CA005438A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9F8EBE3A1D95EC50003BE8BC /* TagGroups.swift */,
+				9FBFA4641DD7F25600429360 /* TagGroups.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,7 +122,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Cold Yam";
 				TargetAttributes = {
 					9F6611491D935619005438A8 = {
@@ -158,6 +158,7 @@
 				9F6611551D935619005438A8 /* Assets.xcassets in Resources */,
 				9F6611531D935619005438A8 /* Main.storyboard in Resources */,
 				9F6611681D935FD2005438A8 /* AHTagTableViewCell.xib in Resources */,
+				9FBFA4651DD7F25600429360 /* TagGroups.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +171,6 @@
 			files = (
 				9F6611641D935CCE005438A8 /* AHTagsLabel.swift in Sources */,
 				9F6611671D935FD2005438A8 /* AHTagTableViewCell.swift in Sources */,
-				9F8EBE3B1D95EC50003BE8BC /* TagGroups.swift in Sources */,
 				9F6611501D935619005438A8 /* ViewController.swift in Sources */,
 				9F6611621D9356EC005438A8 /* AHTagView.swift in Sources */,
 				9F66114E1D935619005438A8 /* AppDelegate.swift in Sources */,
@@ -217,6 +217,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -266,6 +267,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

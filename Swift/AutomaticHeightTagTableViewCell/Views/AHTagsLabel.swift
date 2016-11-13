@@ -12,9 +12,24 @@ struct AHTag {
     var category: String
     var title: String
     var color: UIColor
-    var URL: NSURL?
+    var url: URL?
     var enabled: Bool
-
+    
+    init(dictionary: [String : Any]) {
+        var value: UInt32 = 0
+        let scanner = Scanner(string: (dictionary["COLOR"] as! String))
+        scanner.scanHexInt32(&value)
+        let color = UIColor(red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
+                            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
+                            blue: CGFloat(value & 0x0000FF) / 255.0,
+                            alpha: 1.0)
+        self.color = color
+        self.category = (dictionary["CATEGORY"] as! String)
+        self.title = (dictionary["TITLE"] as! String)
+        self.url = URL(string: (dictionary["URL"] as! String))
+        self.enabled = (dictionary["ENABLED"] as! Bool)
+    }
+    
     func attributedTitle() -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -28,6 +43,7 @@ struct AHTag {
         ]
         return NSAttributedString(string: self.title, attributes: attributes)
     }
+
 }
 
 class AHTagsLabel: UILabel {
