@@ -13,6 +13,18 @@
 
 @end
 
+@implementation NSArray (Extensions)
+
+- (NSArray *)map:(id (^)(id obj))block {
+    NSMutableArray *mutableArray = [NSMutableArray new];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [mutableArray addObject:block(obj)];
+    }];
+    return mutableArray;
+}
+
+@end
+
 @implementation ViewController {
     NSArray<NSArray<AHTag *> *> *_dataSource;
 }
@@ -39,16 +51,9 @@
     NSData *data = [NSData dataWithContentsOfURL:URL];
     NSArray *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     
-    NSMutableArray *mArray = [NSMutableArray new];
-    for (NSArray *object in objects) {
-        NSMutableArray *nArray = [NSMutableArray new];
-        for (NSDictionary *dictionary in object) {
-            [nArray addObject:dictionary.tag];
-        }
-        [mArray addObject:nArray];
-    }
-    
-    return mArray;
+    return [objects map:^id(id obj) {
+        return [(NSArray *)obj map:^id(id obj) { return [(NSDictionary *)obj tag]; }];
+    }];
 }
 
 #pragma mark - UITableViewDataSource
