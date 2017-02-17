@@ -41,6 +41,7 @@
     _label.translatesAutoresizingMaskIntoConstraints = NO;
     _label.layer.cornerRadius = 8;
     _label.layer.masksToBounds = YES;
+    
     [self addSubview:_label];
     [self setupConstraints];
 }
@@ -83,7 +84,7 @@
 #pragma mark - Getter
 
 - (UIImage *)image {
-    UIGraphicsBeginImageContextWithOptions(self.frame.size, YES, 0.0);
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

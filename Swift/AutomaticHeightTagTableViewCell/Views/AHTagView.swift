@@ -81,7 +81,7 @@ class AHTagView: UIView {
     
 
     open func image() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.frame.size, true, 0)
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0)
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
