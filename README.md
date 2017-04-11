@@ -25,7 +25,7 @@
     /* An initialization sample of AHTag with Swift 3.0 */
     let tag = AHTag(category: "Genre", 
                        title: "Classical", 
-   					   color: UIColor(red: 0.626, green: 0.56, blue: 1, alpha: 1), 
+                       color: UIColor(red: 0.626, green: 0.56, blue: 1, alpha: 1), 
                          URL: NSURL(string: "http://itunes.com"), 
                      enabled: true)
 ```

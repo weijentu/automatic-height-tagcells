@@ -68,7 +68,7 @@
                                                            toItem:self
                                                         attribute:NSLayoutAttributeTop
                                                        multiplier:1.0
-                                                         constant:3.0]];
+                                                         constant:6.0]];
     
     [constraints addObject:[NSLayoutConstraint constraintWithItem:self
                                                         attribute:NSLayoutAttributeBottom
@@ -76,7 +76,7 @@
                                                            toItem:_label
                                                         attribute:NSLayoutAttributeBottom
                                                        multiplier:1.0
-                                                         constant:3.0]];
+                                                         constant:6.0]];
     
     [NSLayoutConstraint activateConstraints:constraints];
 }

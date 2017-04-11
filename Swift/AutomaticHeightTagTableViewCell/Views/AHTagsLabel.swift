@@ -145,11 +145,6 @@ class AHTagsLabel: UILabel {
             mutableString.endEditing()
         }
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        mutableString.addAttribute(NSParagraphStyleAttributeName,
-                                   value: paragraphStyle,
-                                   range: NSRange(location: 0, length: mutableString.length))
         self.attributedText = mutableString
     }
     

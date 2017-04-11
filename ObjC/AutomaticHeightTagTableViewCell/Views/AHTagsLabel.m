@@ -109,10 +109,6 @@
         [mutableString endEditing];
     }
     
-    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5.0;
-    [mutableString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, mutableString.length)];
-    
     self.attributedText = mutableString;
 }
 

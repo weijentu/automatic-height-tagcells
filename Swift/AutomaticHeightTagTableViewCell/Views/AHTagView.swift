@@ -68,14 +68,14 @@ class AHTagView: UIView {
                                               toItem: self,
                                               attribute: .top,
                                               multiplier: 1,
-                                              constant: 3))
+                                              constant: 6))
         constraints.append(NSLayoutConstraint(item: self,
                                               attribute: .bottom,
                                               relatedBy: .equal,
                                               toItem: self.label,
                                               attribute: .bottom,
                                               multiplier: 1,
-                                              constant: 3))
+                                              constant: 6))
         NSLayoutConstraint.activate(constraints)
     }
     
