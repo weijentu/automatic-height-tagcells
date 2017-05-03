@@ -9,6 +9,8 @@
 #import "AHTagsLabel.h"
 #import "AHTagView.h"
 
+#define MAX_WIDTH (float)([UIScreen mainScreen].bounds.size.width - 15)
+
 @implementation AHTagsLabel
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -92,11 +94,16 @@
         AHTagView *view = [AHTagView new];
         view.label.attributedText = [AHTagsLabel attributedString:title];
         view.label.backgroundColor = color;
-        
+
         CGSize size = [view systemLayoutSizeFittingSize:view.frame.size
                           withHorizontalFittingPriority:UILayoutPriorityFittingSizeLevel
                                 verticalFittingPriority:UILayoutPriorityFittingSizeLevel];
-        view.frame = CGRectMake(0, 0, size.width + 20, size.height);
+        view.frame = CGRectMake(0, 0, MIN(size.width + 20, MAX_WIDTH), size.height);
+        if (size.width + 20 > MAX_WIDTH) {
+            title = [title substringToIndex:(NSUInteger)(title.length * MAX_WIDTH/(size.width + 20)) - 2];
+            title = [NSString stringWithFormat:@"%@...", title];
+            view.label.attributedText = [AHTagsLabel attributedString:title];
+        }
         [cell.contentView addSubview:view];
         
         UIImage *image = view.image;
@@ -120,6 +127,7 @@
     paragraphStyle.firstLineHeadIndent = 10.0f;
     paragraphStyle.headIndent = 10.0f;
     paragraphStyle.tailIndent = 10.0f;
+    
     NSDictionary *attributes = @{
                                  NSParagraphStyleAttributeName  : paragraphStyle,
                                  NSFontAttributeName            : [UIFont boldSystemFontOfSize:14.0]

@@ -23,7 +23,13 @@
 		"ENABLED": true,
 		"CATEGORY": "Pinterest",
 		"TITLE": "Boards"
-	}],
+     }, {
+        "URL": "http:\/\/pinterest.com",
+        "COLOR": "0xFF8F8F",
+        "ENABLED": true,
+        "CATEGORY": "Pinterest",
+        "TITLE": "The tag is chopped if it's wider than the width of the display."
+     }],
 	[{
 		"URL": "http:\/\/itunes.com",
 		"COLOR": "0xA08FFF",

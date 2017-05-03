@@ -99,4 +99,15 @@
     v.textLabel.textColor = [UIColor darkGrayColor];
 }
 
+#pragma mark - UIViewControllerTransitionCoordinator
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        [self.tableView reloadData];
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {}];
+}
+
 @end

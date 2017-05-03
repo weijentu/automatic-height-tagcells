@@ -81,5 +81,17 @@ class ViewController: UITableViewController {
         let v = view as! UITableViewHeaderFooterView
         v.textLabel?.textColor = UIColor.darkGray
     }
+    
+    // MARK: - UIViewControllerTransitionCoordinator
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            self.tableView.reloadData()
+        }) { (context) in
+            
+        }
+    }
 }
 

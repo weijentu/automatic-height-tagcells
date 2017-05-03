@@ -30,20 +30,6 @@ struct AHTag {
         self.enabled = (dictionary["ENABLED"] as! Bool)
     }
     
-    func attributedTitle() -> NSAttributedString {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.firstLineHeadIndent = 10
-        paragraphStyle.headIndent = 10
-        paragraphStyle.tailIndent = 10
-        
-        let attributes = [
-            NSParagraphStyleAttributeName  : paragraphStyle,
-            NSFontAttributeName            : UIFont.boldSystemFont(ofSize: 14)
-        ]
-        return NSAttributedString(string: self.title, attributes: attributes)
-    }
-
 }
 
 class AHTagsLabel: UILabel {
@@ -127,12 +113,19 @@ class AHTagsLabel: UILabel {
         let cell = UITableViewCell()
         for (_, tag) in tags.enumerated() {
             let view = AHTagView()
-            view.label.attributedText = tag.attributedTitle()
+            view.label.attributedText = AHTagsLabel.attributedTitle(string: tag.title)
             view.label.backgroundColor = tag.enabled ? tag.color : UIColor.lightGray
             let size = view.systemLayoutSizeFitting(view.frame.size,
                                                     withHorizontalFittingPriority: UILayoutPriorityFittingSizeLevel,
                                                     verticalFittingPriority: UILayoutPriorityFittingSizeLevel)
-            view.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: size.height)
+            let width = min(size.width + 20, UIScreen.main.bounds.size.width -  15)
+            view.frame = CGRect(x: 0, y: 0, width: width, height: size.height)
+            if size.width + 20 > width {
+                let offset = CGFloat(tag.title.characters.count) * (UIScreen.main.bounds.size.width -  15)/(size.width + 20) - 2
+                let to = tag.title.index(tag.title.startIndex, offsetBy: Int(offset))
+                let string = String(format: "%@...", tag.title.substring(to: to))
+                view.label.attributedText = AHTagsLabel.attributedTitle(string: string)
+            }
             cell.contentView.addSubview(view)
             
             let image = view.image()
@@ -148,4 +141,17 @@ class AHTagsLabel: UILabel {
         self.attributedText = mutableString
     }
     
+    private class func attributedTitle(string: String) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.firstLineHeadIndent = 10
+        paragraphStyle.headIndent = 10
+        paragraphStyle.tailIndent = 10
+        
+        let attributes = [
+            NSParagraphStyleAttributeName  : paragraphStyle,
+            NSFontAttributeName            : UIFont.boldSystemFont(ofSize: 14)
+        ]
+        return NSAttributedString(string: string, attributes: attributes)
+    }
 }
