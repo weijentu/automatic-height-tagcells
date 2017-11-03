@@ -33,13 +33,18 @@ struct AHTag {
     func attributedTitle() -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        paragraphStyle.firstLineHeadIndent = 10
-        paragraphStyle.headIndent = 10
-        paragraphStyle.tailIndent = 10
+        if #available(iOS 11.0, *) {
+            paragraphStyle.headIndent = paragraphStyle.firstLineHeadIndent
+            paragraphStyle.tailIndent = paragraphStyle.firstLineHeadIndent
+        } else {
+            paragraphStyle.firstLineHeadIndent = 10
+            paragraphStyle.headIndent = 10
+            paragraphStyle.tailIndent = 10
+        }
         
         let attributes = [
-            NSParagraphStyleAttributeName  : paragraphStyle,
-            NSFontAttributeName            : UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedStringKey.paragraphStyle  : paragraphStyle,
+            NSAttributedStringKey.font            : UIFont.boldSystemFont(ofSize: 14)
         ]
         return NSAttributedString(string: self.title, attributes: attributes)
     }
@@ -130,8 +135,8 @@ class AHTagsLabel: UILabel {
             view.label.attributedText = tag.attributedTitle()
             view.label.backgroundColor = tag.enabled ? tag.color : UIColor.lightGray
             let size = view.systemLayoutSizeFitting(view.frame.size,
-                                                    withHorizontalFittingPriority: UILayoutPriorityFittingSizeLevel,
-                                                    verticalFittingPriority: UILayoutPriorityFittingSizeLevel)
+                                                    withHorizontalFittingPriority: UILayoutPriority.fittingSizeLevel,
+                                                    verticalFittingPriority: UILayoutPriority.fittingSizeLevel)
             view.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: size.height)
             cell.contentView.addSubview(view)
             

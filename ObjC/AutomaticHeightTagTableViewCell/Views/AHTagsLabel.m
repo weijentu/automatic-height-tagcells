@@ -117,9 +117,16 @@
 + (NSAttributedString *)attributedString:(NSString *)string {
     NSMutableParagraphStyle *paragraphStyle =  [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = NSTextAlignmentCenter;
-    paragraphStyle.firstLineHeadIndent = 10.0f;
-    paragraphStyle.headIndent = 10.0f;
-    paragraphStyle.tailIndent = 10.0f;
+    NSOperatingSystemVersion atLeastVersion = (NSOperatingSystemVersion){.majorVersion = 11, .minorVersion = 1, .patchVersion = 0};
+    if ([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:atLeastVersion]) {
+        paragraphStyle.headIndent = paragraphStyle.firstLineHeadIndent;
+        paragraphStyle.tailIndent = paragraphStyle.firstLineHeadIndent;
+    } else {
+        paragraphStyle.firstLineHeadIndent = 10.0f;
+        paragraphStyle.headIndent = 10.0f;
+        paragraphStyle.tailIndent = 10.0f;
+    }
+
     NSDictionary *attributes = @{
                                  NSParagraphStyleAttributeName  : paragraphStyle,
                                  NSFontAttributeName            : [UIFont boldSystemFontOfSize:14.0]
